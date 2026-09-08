@@ -1,7 +1,20 @@
 {
   "expo": {
-    "name": "SipNBite",
+    "name": "Sip N Bite",
     "slug": "SipNBite",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.sipnbite.reactnative",
+      "adaptiveIcon": {
+        "backgroundColor": "#3D2D25"
+      },
+      "usesCleartextTraffic": true
+    },
+    "ios": {
+      "bundleIdentifier": "com.sipnbite.reactnative"
+    },
+    "plugins": []
   }
 }
