@@ -98,7 +98,7 @@ export default function MenuScreen({ navigation }) {
       {/* Search Bar */}
       <View style={styles.searchSection}>
         <View style={styles.searchBox}>
-          <Ionicons name="search" size={18} color="#FF3D00" style={{ marginRight: 10 }} />
+          <Ionicons name="search" size={18} color="#9C91FA" style={{ marginRight: 10 }} />
           <TextInput
             placeholder="Search for dishes, drinks..."
             placeholderTextColor="#A89E91"
@@ -184,7 +184,7 @@ export default function MenuScreen({ navigation }) {
 
       {initialLoad ? (
         <View style={styles.loadingState}>
-          <ActivityIndicator size="large" color="#B86B3D" />
+          <ActivityIndicator size="large" color="#9C91FA" />
           <Text style={styles.loadingText}>Loading menu...</Text>
         </View>
       ) : (
@@ -192,11 +192,11 @@ export default function MenuScreen({ navigation }) {
           data={menuItems}
           keyExtractor={(item) => item.id.toString()}
           renderItem={renderItem}
-          ListHeaderComponent={renderHeader}
+          ListHeaderComponent={renderHeader()}
           ListEmptyComponent={
             !loading && (
               <View style={styles.emptyState}>
-                <Ionicons name="restaurant-outline" size={48} color="#FF3D00" style={{ marginBottom: 10 }} />
+                <Ionicons name="restaurant-outline" size={48} color="#9C91FA" style={{ marginBottom: 10 }} />
                 <Text style={styles.emptyTitle}>No items found</Text>
                 <Text style={styles.emptySubtext}>Try a different search or filter</Text>
               </View>
@@ -226,15 +226,15 @@ export default function MenuScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FBF8F4' },
+  container: { flex: 1, backgroundColor: '#F3F4FB' },
 
   titleBar: {
-    backgroundColor: '#FBF8F4',
+    backgroundColor: '#F3F4FB',
     paddingHorizontal: 20,
     paddingTop: 54,
     paddingBottom: 6,
   },
-  titleText: { color: '#2D2925', fontSize: 28, fontWeight: '900' },
+  titleText: { color: '#333333', fontSize: 28, fontWeight: '900' },
   titleSubtext: { color: '#9B8D7B', fontSize: 13, marginTop: 2 },
 
   listContent: { paddingHorizontal: 16, paddingBottom: 100 },
@@ -242,11 +242,11 @@ const styles = StyleSheet.create({
   // Search
   searchSection: { marginTop: 14, marginBottom: 10 },
   searchBox: {
-    alignItems: 'center', backgroundColor: '#F1ECE6', borderRadius: 16,
+    alignItems: 'center', backgroundColor: '#FFFFFF', borderRadius: 16,
     flexDirection: 'row', height: 50, paddingHorizontal: 16,
   },
   searchIcon: { fontSize: 18, marginRight: 10 },
-  searchInput: { color: '#2D2925', flex: 1, fontSize: 14 },
+  searchInput: { color: '#333333', flex: 1, fontSize: 14 },
   clearButton: { alignItems: 'center', height: 32, justifyContent: 'center', width: 32 },
   clearText: { color: '#766D63', fontSize: 16 },
 
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
   clearFilters: {
     backgroundColor: '#FFF0E6', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 6,
   },
-  clearFiltersText: { color: '#B86B3D', fontSize: 11, fontWeight: '700' },
+  clearFiltersText: { color: '#9C91FA', fontSize: 11, fontWeight: '700' },
 
   // Categories
   categoryList: { paddingVertical: 6 },
@@ -272,7 +272,7 @@ const styles = StyleSheet.create({
   },
   resultsText: { color: '#9B8D7B', fontSize: 12, fontWeight: '600' },
   activeFilter: {
-    backgroundColor: '#B86B3D22', borderRadius: 8, color: '#B86B3D',
+    backgroundColor: '#9C91FA22', borderRadius: 8, color: '#9C91FA',
     fontSize: 11, fontWeight: '700', paddingHorizontal: 10, paddingVertical: 4,
   },
 
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
   loadingText: { color: '#9B8D7B', fontSize: 13, marginTop: 10 },
   emptyState: { alignItems: 'center', paddingVertical: 60 },
   emptyEmoji: { fontSize: 52, marginBottom: 12 },
-  emptyTitle: { color: '#2D2925', fontSize: 18, fontWeight: '800' },
+  emptyTitle: { color: '#333333', fontSize: 18, fontWeight: '800' },
   emptySubtext: { color: '#9B8D7B', fontSize: 13, marginTop: 4 },
 
   // Toast

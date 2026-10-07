@@ -17,7 +17,7 @@ import { checkout } from '../api/ApiClient';
 
 export default function CheckoutScreen({ navigation }) {
   const { user } = useAuth();
-  const { getCartItems, getTotal, clearCart } = useCart();
+  const { getCartItems, getTotal, clear } = useCart();
   const [paymentMethod, setPaymentMethod] = useState('COD');
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
@@ -85,7 +85,7 @@ export default function CheckoutScreen({ navigation }) {
       const res = await checkout(requestData);
 
       if (res.data?.success) {
-        clearCart();
+        clear();
         Alert.alert(
           '🎉 Order Placed Successfully!',
           `Your order #${res.data.data.id} has been received and sent to the kitchen!`,
@@ -132,7 +132,7 @@ export default function CheckoutScreen({ navigation }) {
         {/* Order Summary Card */}
         <View style={styles.section}>
           <View style={styles.sectionHeaderRow}>
-            <Ionicons name="cart-outline" size={18} color="#FF3D00" style={{ marginRight: 6 }} />
+            <Ionicons name="cart-outline" size={18} color="#E23744" style={{ marginRight: 6 }} />
             <Text style={styles.sectionTitle}>Items in Order</Text>
           </View>
           <View style={styles.summaryCard}>
@@ -157,7 +157,7 @@ export default function CheckoutScreen({ navigation }) {
         {/* Payment Method Selector */}
         <View style={styles.section}>
           <View style={styles.sectionHeaderRow}>
-            <Ionicons name="card-outline" size={18} color="#FF3D00" style={{ marginRight: 6 }} />
+            <Ionicons name="card-outline" size={18} color="#E23744" style={{ marginRight: 6 }} />
             <Text style={styles.sectionTitle}>Choose Payment Method</Text>
           </View>
           <View style={styles.paymentOptions}>
@@ -173,7 +173,7 @@ export default function CheckoutScreen({ navigation }) {
                 <Text style={styles.optionTitle}>Cash on Delivery</Text>
                 <Text style={styles.optionSubtitle}>Pay in cash when order arrives</Text>
               </View>
-              {paymentMethod === 'COD' && <Ionicons name="checkmark-circle" size={20} color="#FF3D00" />}
+              {paymentMethod === 'COD' && <Ionicons name="checkmark-circle" size={20} color="#E23744" />}
             </Pressable>
 
             <Pressable
@@ -183,12 +183,12 @@ export default function CheckoutScreen({ navigation }) {
               ]}
               onPress={() => setPaymentMethod('Razorpay')}
             >
-              <Ionicons name="card-outline" size={24} color="#FF3D00" style={{ marginRight: 12 }} />
+              <Ionicons name="card-outline" size={24} color="#E23744" style={{ marginRight: 12 }} />
               <View style={styles.optionInfo}>
                 <Text style={styles.optionTitle}>Online Payment (Razorpay)</Text>
                 <Text style={styles.optionSubtitle}>UPI / GPay, Cards, NetBanking</Text>
               </View>
-              {paymentMethod === 'Razorpay' && <Ionicons name="checkmark-circle" size={20} color="#FF3D00" />}
+              {paymentMethod === 'Razorpay' && <Ionicons name="checkmark-circle" size={20} color="#E23744" />}
             </Pressable>
           </View>
         </View>
@@ -196,7 +196,7 @@ export default function CheckoutScreen({ navigation }) {
         {/* Delivery Note Input */}
         <View style={styles.section}>
           <View style={styles.sectionHeaderRow}>
-            <Ionicons name="document-text-outline" size={18} color="#FF3D00" style={{ marginRight: 6 }} />
+            <Ionicons name="document-text-outline" size={18} color="#E23744" style={{ marginRight: 6 }} />
             <Text style={styles.sectionTitle}>Delivery Instructions (Optional)</Text>
           </View>
           <TextInput
@@ -271,16 +271,16 @@ export default function CheckoutScreen({ navigation }) {
                   ]}
                   onPress={() => setSelectedOnlineOption(opt.id)}
                 >
-                  <Ionicons name={opt.iconName} size={22} color="#FF3D00" style={{ marginRight: 10 }} />
+                  <Ionicons name={opt.iconName} size={22} color="#E23744" style={{ marginRight: 10 }} />
                   <Text style={styles.onlineOptionText}>{opt.label}</Text>
-                  {selectedOnlineOption === opt.id && <Ionicons name="checkmark-circle" size={18} color="#FF3D00" />}
+                  {selectedOnlineOption === opt.id && <Ionicons name="checkmark-circle" size={18} color="#E23744" />}
                 </Pressable>
               ))}
             </View>
 
             {processingPayment ? (
               <View style={styles.processingBox}>
-                <ActivityIndicator size="large" color="#FF3D00" />
+                <ActivityIndicator size="large" color="#E23744" />
                 <Text style={styles.processingText}>Authenticating with Bank Gateway...</Text>
               </View>
             ) : (
@@ -331,7 +331,7 @@ const styles = StyleSheet.create({
   itemPrice: { fontSize: 14, fontWeight: '800', color: '#1F1610' },
   divider: { height: 1.5, backgroundColor: '#FFE4D6', marginVertical: 10 },
   totalLabel: { fontSize: 16, fontWeight: '900', color: '#1F1610' },
-  totalValue: { fontSize: 18, fontWeight: '900', color: '#FF3D00' },
+  totalValue: { fontSize: 18, fontWeight: '900', color: '#E23744' },
   paymentOptions: { gap: 10 },
   optionCard: {
     flexDirection: 'row',
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 14,
   },
-  optionCardSelected: { borderColor: '#FF3D00', backgroundColor: '#FFF5F0' },
+  optionCardSelected: { borderColor: '#E23744', backgroundColor: '#FFF5F0' },
   optionInfo: { flex: 1 },
   optionTitle: { fontSize: 14, fontWeight: '900', color: '#1F1610' },
   optionSubtitle: { fontSize: 12, color: '#8C7D73', marginTop: 2, fontWeight: '600' },
@@ -372,9 +372,9 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   bottomTotalLabel: { fontSize: 11, color: '#8C7D73', fontWeight: '700' },
-  bottomTotalVal: { fontSize: 20, fontWeight: '900', color: '#FF3D00' },
+  bottomTotalVal: { fontSize: 20, fontWeight: '900', color: '#E23744' },
   placeOrderButton: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 16,
     paddingHorizontal: 20,
     paddingVertical: 14,
@@ -424,10 +424,10 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     backgroundColor: '#FFFFFF',
   },
-  onlineOptionSelected: { borderColor: '#FF3D00', backgroundColor: '#FFF5F0' },
+  onlineOptionSelected: { borderColor: '#E23744', backgroundColor: '#FFF5F0' },
   onlineOptionText: { flex: 1, fontSize: 13, fontWeight: '700', color: '#1F1610' },
   processingBox: { alignItems: 'center', paddingVertical: 20 },
-  processingText: { marginTop: 12, fontSize: 14, fontWeight: '900', color: '#FF3D00' },
+  processingText: { marginTop: 12, fontSize: 14, fontWeight: '900', color: '#E23744' },
   modalActionRow: { flexDirection: 'row', gap: 12 },
   cancelPayButton: {
     flex: 1,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     alignItems: 'center',
     borderRadius: 14,
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
   },
   payNowText: { fontSize: 14, fontWeight: '900', color: '#FFFFFF' },
 });

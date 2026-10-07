@@ -117,18 +117,18 @@ export default function TableBookingHistoryScreen({ navigation }) {
           <Text style={styles.syncText}>Last synced {lastSynced}</Text>
         </View>
         <Pressable onPress={() => fetchBookings(true)} style={styles.refreshBtn}>
-          <Ionicons name="refresh" size={20} color="#FF3D00" />
+          <Ionicons name="refresh" size={20} color="#E23744" />
         </Pressable>
       </View>
 
       {loading && !refreshing ? (
         <View style={styles.loadingState}>
-          <ActivityIndicator size="large" color="#FF3D00" />
+          <ActivityIndicator size="large" color="#E23744" />
           <Text style={styles.loadingText}>Fetching reservation status...</Text>
         </View>
       ) : bookings.length === 0 ? (
         <View style={styles.emptyState}>
-          <Ionicons name="restaurant-outline" size={48} color="#FF3D00" style={{ marginBottom: 10 }} />
+          <Ionicons name="restaurant-outline" size={48} color="#E23744" style={{ marginBottom: 10 }} />
           <Text style={styles.emptyTitle}>No Table Reservations Yet</Text>
           <Text style={styles.emptySubtitle}>Book a table at Sip N Bite and track admin approval live here!</Text>
           <Pressable
@@ -148,8 +148,8 @@ export default function TableBookingHistoryScreen({ navigation }) {
             <RefreshControl
               refreshing={refreshing}
               onRefresh={onRefresh}
-              colors={['#FF3D00']}
-              tintColor="#FF3D00"
+              colors={['#E23744']}
+              tintColor="#E23744"
             />
           }
           renderItem={({ item }) => {
@@ -232,12 +232,12 @@ const styles = StyleSheet.create({
   emptyTitle: { fontSize: 20, fontWeight: '900', color: '#1F1610' },
   emptySubtitle: { fontSize: 13, color: '#8C7D73', marginTop: 6, marginBottom: 24, textAlign: 'center' },
   bookNowBtn: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     paddingHorizontal: 24,
     paddingVertical: 14,
     borderRadius: 16,
     elevation: 4,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -252,14 +252,14 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#FFE4D6',
     elevation: 4,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.08,
     shadowRadius: 8,
   },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
   tableBadge: { backgroundColor: '#FFF3EB', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 6 },
-  tableBadgeText: { color: '#FF3D00', fontWeight: '900', fontSize: 14 },
+  tableBadgeText: { color: '#E23744', fontWeight: '900', fontSize: 14 },
   guestsBadge: { fontSize: 13, fontWeight: '800', color: '#1F1610' },
   statusBox: {
     borderRadius: 14,

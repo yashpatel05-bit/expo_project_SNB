@@ -64,7 +64,7 @@ export default function OrderHistoryScreen({ navigation }) {
         </Pressable>
         <Text style={styles.headerTitle}>My Orders</Text>
         <Pressable onPress={() => fetchOrders(true)} style={{ padding: 4 }}>
-          <Ionicons name="refresh" size={20} color="#FF3D00" />
+          <Ionicons name="refresh" size={20} color="#E23744" />
         </Pressable>
       </View>
 
@@ -90,7 +90,7 @@ export default function OrderHistoryScreen({ navigation }) {
         </View>
       ) : filteredOrders.length === 0 ? (
         <View style={styles.emptyState}>
-          <Ionicons name="receipt-outline" size={48} color="#FF3D00" style={{ marginBottom: 10 }} />
+          <Ionicons name="receipt-outline" size={48} color="#E23744" style={{ marginBottom: 10 }} />
           <Text style={styles.emptyTitle}>No {activeFilter !== 'All' ? activeFilter : ''} Orders Found</Text>
           <Text style={styles.emptySubtitle}>Your order history will show here with real status tracking.</Text>
         </View>

@@ -113,7 +113,7 @@ export default function AddressScreen({ navigation }) {
           onPress={() => setShowForm(!showForm)}
           style={styles.addHeaderButton}
         >
-          <Ionicons name={showForm ? 'close' : 'add'} size={22} color="#FF3D00" />
+          <Ionicons name={showForm ? 'close' : 'add'} size={22} color="#E23744" />
         </Pressable>
       </View>
 
@@ -169,11 +169,11 @@ export default function AddressScreen({ navigation }) {
       {/* Address List */}
       {loading ? (
         <View style={styles.loadingState}>
-          <ActivityIndicator size="large" color="#FF3D00" />
+          <ActivityIndicator size="large" color="#E23744" />
         </View>
       ) : addresses.length === 0 ? (
         <View style={styles.emptyState}>
-          <Ionicons name="location-outline" size={48} color="#FF3D00" style={{ marginBottom: 10 }} />
+          <Ionicons name="location-outline" size={48} color="#E23744" style={{ marginBottom: 10 }} />
           <Text style={styles.emptyTitle}>No Addresses Saved</Text>
           <Text style={styles.emptySub}>Add your home or office address for faster delivery.</Text>
         </View>
@@ -185,7 +185,7 @@ export default function AddressScreen({ navigation }) {
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={styles.addressCard}>
-              <Ionicons name={getAddressIconName(item.title)} size={22} color="#FF3D00" style={{ marginRight: 12 }} />
+              <Ionicons name={getAddressIconName(item.title)} size={22} color="#E23744" style={{ marginRight: 12 }} />
               <View style={styles.addressInfo}>
                 <Text style={styles.addressTitle}>{item.title}</Text>
                 <Text style={styles.addressText}>{item.address_line}</Text>
@@ -199,7 +199,7 @@ export default function AddressScreen({ navigation }) {
                 onPress={() => handleDelete(item.id)}
                 style={styles.deleteButton}
               >
-                <Ionicons name="trash-outline" size={18} color="#FF3D00" />
+                <Ionicons name="trash-outline" size={18} color="#E23744" />
               </Pressable>
             </View>
           )}

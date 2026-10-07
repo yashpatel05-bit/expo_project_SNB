@@ -24,7 +24,7 @@ export default function AboutScreen({ navigation }) {
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         {/* Hero */}
         <View style={styles.heroCard}>
-          <Ionicons name="cafe" size={48} color="#FF3D00" style={{ marginBottom: 8 }} />
+          <Ionicons name="cafe" size={48} color="#E23744" style={{ marginBottom: 8 }} />
           <Text style={styles.brand}>
             Sip <Text style={styles.brandAccent}>&</Text> Bite
           </Text>
@@ -45,12 +45,12 @@ export default function AboutScreen({ navigation }) {
         {/* Stats */}
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <Ionicons name="restaurant-outline" size={22} color="#FF3D00" style={{ marginBottom: 4 }} />
+            <Ionicons name="restaurant-outline" size={22} color="#E23744" style={{ marginBottom: 4 }} />
             <Text style={styles.statValue}>15+</Text>
             <Text style={styles.statLabel}>Expert Chefs</Text>
           </View>
           <View style={styles.statCard}>
-            <Ionicons name="cafe-outline" size={22} color="#FF3D00" style={{ marginBottom: 4 }} />
+            <Ionicons name="cafe-outline" size={22} color="#E23744" style={{ marginBottom: 4 }} />
             <Text style={styles.statValue}>50+</Text>
             <Text style={styles.statLabel}>Menu Items</Text>
           </View>
@@ -84,7 +84,7 @@ export default function AboutScreen({ navigation }) {
             <Text style={styles.timingTime}>9:00 AM – 11:00 PM</Text>
           </View>
           <View style={styles.locationRow}>
-            <Ionicons name="location-outline" size={18} color="#FF3D00" style={{ marginRight: 8 }} />
+            <Ionicons name="location-outline" size={18} color="#E23744" style={{ marginRight: 8 }} />
             <Text style={styles.locationText}>
               123 Café Street, Downtown{'\n'}New York, NY 10001
             </Text>
@@ -98,21 +98,21 @@ export default function AboutScreen({ navigation }) {
             style={styles.contactRow}
             onPress={() => Linking.openURL('tel:+911234567890')}
           >
-            <Ionicons name="call-outline" size={18} color="#FF3D00" style={{ marginRight: 10 }} />
+            <Ionicons name="call-outline" size={18} color="#E23744" style={{ marginRight: 10 }} />
             <Text style={styles.contactText}>+91 123-456-7890</Text>
           </Pressable>
           <Pressable
             style={styles.contactRow}
             onPress={() => Linking.openURL('mailto:hello@sipnbite.com')}
           >
-            <Ionicons name="mail-outline" size={18} color="#FF3D00" style={{ marginRight: 10 }} />
+            <Ionicons name="mail-outline" size={18} color="#E23744" style={{ marginRight: 10 }} />
             <Text style={styles.contactText}>hello@sipnbite.com</Text>
           </Pressable>
           <Pressable
             style={styles.contactRow}
             onPress={() => Linking.openURL('https://www.sipnbite.com')}
           >
-            <Ionicons name="globe-outline" size={18} color="#FF3D00" style={{ marginRight: 10 }} />
+            <Ionicons name="globe-outline" size={18} color="#E23744" style={{ marginRight: 10 }} />
             <Text style={styles.contactText}>www.sipnbite.com</Text>
           </Pressable>
         </View>
@@ -128,7 +128,7 @@ export default function AboutScreen({ navigation }) {
 function FeatureRow({ iconName, text }) {
   return (
     <View style={styles.featureRow}>
-      <Ionicons name={iconName} size={18} color="#FF3D00" style={{ marginRight: 10 }} />
+      <Ionicons name={iconName} size={18} color="#E23744" style={{ marginRight: 10 }} />
       <Text style={styles.featureText}>{text}</Text>
     </View>
   );

@@ -88,7 +88,7 @@ export default function CartScreen({ navigation }) {
 
       {cartItems.length === 0 ? (
         <View style={styles.emptyState}>
-          <Ionicons name="cart-outline" size={54} color="#FF3D00" style={{ marginBottom: 12 }} />
+          <Ionicons name="cart-outline" size={54} color="#E23744" style={{ marginBottom: 12 }} />
           <Text style={styles.emptyTitle}>Your cart is empty</Text>
           <Text style={styles.emptySubtitle}>Explore our delicious coffee, shakes & bites!</Text>
           <Pressable style={styles.browseButton} onPress={() => navigation.goBack()}>
@@ -117,7 +117,7 @@ export default function CartScreen({ navigation }) {
             {/* Promo / Coupon Box */}
             <View style={styles.promoCard}>
               <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
-                <Ionicons name="pricetag-outline" size={16} color="#FF3D00" style={{ marginRight: 6 }} />
+                <Ionicons name="pricetag-outline" size={16} color="#E23744" style={{ marginRight: 6 }} />
                 <Text style={styles.promoHeader}>Have a Coupon / Promo Code?</Text>
               </View>
               {appliedCoupon ? (
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   emptyEmoji: { fontSize: 64, marginBottom: 16 },
   emptyTitle: { fontSize: 20, fontWeight: '900', color: '#1F1610' },
   emptySubtitle: { fontSize: 13, color: '#8C7D73', marginTop: 4, marginBottom: 20, textAlign: 'center', fontWeight: '600' },
-  browseButton: { backgroundColor: '#FF3D00', paddingHorizontal: 24, paddingVertical: 14, borderRadius: 16, elevation: 4 },
+  browseButton: { backgroundColor: '#E23744', paddingHorizontal: 24, paddingVertical: 14, borderRadius: 16, elevation: 4 },
   browseButtonText: { color: '#FFF', fontWeight: '900', fontSize: 14 },
   scrollView: { flex: 1 },
   scrollContent: { padding: 16, paddingBottom: 120 },
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     borderColor: '#FFE4D6',
   },
   applyBtn: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 14,
     paddingHorizontal: 18,
     justifyContent: 'center',
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
   discountValue: { fontSize: 13, fontWeight: '900', color: '#16A34A' },
   divider: { height: 1, backgroundColor: '#FFE4D6', marginVertical: 10 },
   totalLabel: { fontSize: 16, fontWeight: '900', color: '#1F1610' },
-  totalValue: { fontSize: 18, fontWeight: '900', color: '#FF3D00' },
+  totalValue: { fontSize: 18, fontWeight: '900', color: '#E23744' },
 
   footer: {
     position: 'absolute',
@@ -287,11 +287,10 @@ const styles = StyleSheet.create({
   footerTotalLabel: { fontSize: 11, color: '#FFEAE0', fontWeight: '700' },
   footerTotalVal: { fontSize: 20, fontWeight: '900', color: '#FFFFFF' },
   checkoutButton: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 14,
     paddingHorizontal: 18,
     paddingVertical: 12,
   },
   checkoutText: { color: '#FFF', fontSize: 14, fontWeight: '900' },
-});ontSize: 14, fontWeight: '800' },
 });

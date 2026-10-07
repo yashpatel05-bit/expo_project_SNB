@@ -124,7 +124,7 @@ export default function ProfileScreen({ navigation }) {
           <Text style={styles.userEmail}>{user?.email || 'Not logged in'}</Text>
           
           <Pressable style={styles.changePhotoBtn} onPress={handlePickProfileImage}>
-            <Ionicons name="camera-outline" size={16} color="#FF3D00" style={{ marginRight: 6 }} />
+            <Ionicons name="camera-outline" size={16} color="#E23744" style={{ marginRight: 6 }} />
             <Text style={styles.changePhotoText}>Upload Photo from Phone</Text>
           </Pressable>
         </View>
@@ -187,7 +187,7 @@ export default function ProfileScreen({ navigation }) {
 function InfoRow({ iconName, label, value }) {
   return (
     <View style={styles.infoRow}>
-      <Ionicons name={iconName} size={20} color="#FF3D00" style={{ marginRight: 12 }} />
+      <Ionicons name={iconName} size={20} color="#E23744" style={{ marginRight: 12 }} />
       <View style={styles.infoContent}>
         <Text style={styles.infoLabel}>{label}</Text>
         <Text style={styles.infoValue}>{value}</Text>
@@ -199,7 +199,7 @@ function InfoRow({ iconName, label, value }) {
 function LinkRow({ iconName, label, onPress }) {
   return (
     <Pressable style={styles.linkRow} onPress={onPress}>
-      <Ionicons name={iconName} size={20} color="#FF3D00" style={{ marginRight: 12 }} />
+      <Ionicons name={iconName} size={20} color="#E23744" style={{ marginRight: 12 }} />
       <Text style={styles.linkLabel}>{label}</Text>
       <Ionicons name="chevron-forward" size={16} color="#A89E91" />
     </Pressable>
@@ -232,18 +232,18 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#FFE4D6',
     elevation: 3,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.08,
     shadowRadius: 8,
   },
   avatarContainer: { position: 'relative', marginBottom: 12 },
-  avatarImage: { width: 88, height: 88, borderRadius: 44, borderWidth: 3, borderColor: '#FF3D00' },
+  avatarImage: { width: 88, height: 88, borderRadius: 44, borderWidth: 3, borderColor: '#E23744' },
   avatarCircle: {
     width: 88,
     height: 88,
     borderRadius: 44,
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -268,12 +268,12 @@ const styles = StyleSheet.create({
   changePhotoBtn: {
     backgroundColor: '#FFF5F0',
     borderWidth: 1.5,
-    borderColor: '#FF3D00',
+    borderColor: '#E23744',
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
-  changePhotoText: { color: '#FF3D00', fontSize: 12, fontWeight: '900' },
+  changePhotoText: { color: '#E23744', fontSize: 12, fontWeight: '900' },
 
   infoSection: { marginBottom: 20 },
   linksSection: { marginBottom: 20 },
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
   },
   linkIcon: { fontSize: 20, marginRight: 12 },
   linkLabel: { flex: 1, fontSize: 14, fontWeight: '900', color: '#1F1610' },
-  linkArrow: { fontSize: 22, color: '#FF3D00', fontWeight: '900' },
+  linkArrow: { fontSize: 22, color: '#E23744', fontWeight: '900' },
 
   logoutButton: {
     backgroundColor: '#FEE2E2',

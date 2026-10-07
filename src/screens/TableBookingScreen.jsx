@@ -262,7 +262,7 @@ export default function TableBookingScreen({ navigation }) {
         <View style={{ flex: 1 }}>
           {fetchingHistory ? (
             <View style={styles.loadingState}>
-              <ActivityIndicator size="large" color="#FF3D00" />
+              <ActivityIndicator size="large" color="#E23744" />
               <Text style={{ color: '#8C7D73', marginTop: 8, fontWeight: '700' }}>Fetching your table status...</Text>
             </View>
           ) : userBookings.length === 0 ? (
@@ -354,19 +354,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#FFE4D6',
   },
-  tabBtnActive: { backgroundColor: '#FF3D00', borderColor: '#FF3D00' },
+  tabBtnActive: { backgroundColor: '#E23744', borderColor: '#E23744' },
   tabBtnText: { fontSize: 13, fontWeight: '800', color: '#8C7D73' },
   tabBtnTextActive: { color: '#FFFFFF' },
 
   scrollContent: { padding: 16, paddingBottom: 40 },
   heroCard: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 20,
     padding: 20,
     alignItems: 'center',
     marginBottom: 20,
     elevation: 4,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 8,
@@ -399,18 +399,18 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#FFE4D6',
   },
-  guestChipActive: { backgroundColor: '#FF3D00', borderColor: '#FF3D00' },
+  guestChipActive: { backgroundColor: '#E23744', borderColor: '#E23744' },
   guestChipText: { fontSize: 13, fontWeight: '800', color: '#8C7D73' },
   guestChipTextActive: { color: '#FFFFFF' },
 
   submitButton: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 16,
     paddingVertical: 16,
     alignItems: 'center',
     marginTop: 10,
     elevation: 4,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -423,7 +423,7 @@ const styles = StyleSheet.create({
   emptyEmoji: { fontSize: 60, marginBottom: 12 },
   emptyTitle: { fontSize: 18, fontWeight: '900', color: '#1F1610' },
   emptySubtitle: { fontSize: 13, color: '#8C7D73', marginTop: 4, textAlign: 'center' },
-  bookNowBtn: { marginTop: 16, backgroundColor: '#FF3D00', borderRadius: 14, paddingHorizontal: 20, paddingVertical: 12 },
+  bookNowBtn: { marginTop: 16, backgroundColor: '#E23744', borderRadius: 14, paddingHorizontal: 20, paddingVertical: 12 },
   bookNowText: { color: '#FFF', fontWeight: '900', fontSize: 13 },
 
   historyList: { padding: 16 },
@@ -435,14 +435,14 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#FFE4D6',
     elevation: 3,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.06,
     shadowRadius: 6,
   },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
   cardTableTitle: { fontSize: 15, fontWeight: '900', color: '#1F1610' },
-  cardGuests: { fontSize: 13, fontWeight: '800', color: '#FF3D00' },
+  cardGuests: { fontSize: 13, fontWeight: '800', color: '#E23744' },
   statusBadge: { borderRadius: 10, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, marginBottom: 10 },
   statusBadgeText: { fontSize: 12, fontWeight: '900' },
   cardDetailsRow: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#FFF9F5', padding: 10, borderRadius: 10 },

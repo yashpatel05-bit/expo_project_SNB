@@ -41,7 +41,7 @@ export default function MenuItemCard({ item, onAddToCart, onPress }) {
             <Image source={{ uri: imageUri }} style={styles.image} resizeMode="cover" />
           ) : (
             <View style={styles.placeholderImage}>
-              <Ionicons name="fast-food-outline" size={28} color="#FF3D00" />
+              <Ionicons name="fast-food-outline" size={28} color="#E23744" />
             </View>
           )}
           {/* Veg / Non-veg badge */}
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     flexDirection: 'row',
     overflow: 'hidden',
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.08,
     shadowRadius: 6,
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
   price: {
-    color: '#FF3D00',
+    color: '#E23744',
     fontSize: 16,
     fontWeight: '900',
   },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   addButton: {
     alignItems: 'center',
     alignSelf: 'center',
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#E23744',
     borderRadius: 12,
     height: 36,
     justifyContent: 'center',

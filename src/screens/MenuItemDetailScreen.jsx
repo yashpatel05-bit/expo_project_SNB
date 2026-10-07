@@ -62,7 +62,7 @@ export default function MenuItemDetailScreen({ route, navigation }) {
             <Image source={{ uri: imageUri }} style={styles.image} resizeMode="cover" />
           ) : (
             <View style={styles.placeholderImage}>
-              <Ionicons name="fast-food-outline" size={48} color="#FF3D00" />
+              <Ionicons name="fast-food-outline" size={48} color="#E23744" />
             </View>
           )}
           {/* Veg badge */}
@@ -101,17 +101,17 @@ export default function MenuItemDetailScreen({ route, navigation }) {
           {/* Nutrition / Info cards */}
           <View style={styles.infoCards}>
             <View style={styles.infoCard}>
-              <Ionicons name="time-outline" size={22} color="#FF3D00" style={{ marginBottom: 4 }} />
+              <Ionicons name="time-outline" size={22} color="#E23744" style={{ marginBottom: 4 }} />
               <Text style={styles.infoCardLabel}>Prep Time</Text>
               <Text style={styles.infoCardValue}>15-20 min</Text>
             </View>
             <View style={styles.infoCard}>
-              <Ionicons name="flame-outline" size={22} color="#FF3D00" style={{ marginBottom: 4 }} />
+              <Ionicons name="flame-outline" size={22} color="#E23744" style={{ marginBottom: 4 }} />
               <Text style={styles.infoCardLabel}>Calories</Text>
               <Text style={styles.infoCardValue}>~250 kcal</Text>
             </View>
             <View style={styles.infoCard}>
-              <Ionicons name="star-outline" size={22} color="#FF3D00" style={{ marginBottom: 4 }} />
+              <Ionicons name="star-outline" size={22} color="#E23744" style={{ marginBottom: 4 }} />
               <Text style={styles.infoCardLabel}>Rating</Text>
               <Text style={styles.infoCardValue}>{item.rating > 0 ? item.rating.toFixed(1) : 'New'}</Text>
             </View>

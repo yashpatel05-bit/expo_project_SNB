@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
     marginRight: 10,
     width: 78,
     elevation: 2,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 4,
   },
   cardActive: {
-    backgroundColor: '#FF3D00',
-    borderColor: '#FF3D00',
+    backgroundColor: '#E23744',
+    borderColor: '#E23744',
     elevation: 4,
   },
   emoji: {

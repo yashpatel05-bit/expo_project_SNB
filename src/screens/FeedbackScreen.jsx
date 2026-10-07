@@ -69,7 +69,7 @@ export default function FeedbackScreen({ route, navigation }) {
       <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
         {/* Hero */}
         <View style={styles.heroCard}>
-          <Ionicons name="chatbubble-ellipses-outline" size={48} color="#FF3D00" style={{ marginBottom: 8 }} />
+          <Ionicons name="chatbubble-ellipses-outline" size={48} color="#E23744" style={{ marginBottom: 8 }} />
           <Text style={styles.heroTitle}>We'd love your feedback!</Text>
           <Text style={styles.heroSubtitle}>
             Help us make Sip & Bite even better

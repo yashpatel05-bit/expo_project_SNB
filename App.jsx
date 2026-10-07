@@ -25,6 +25,7 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import FeedbackScreen from './src/screens/FeedbackScreen';
 import AddressScreen from './src/screens/AddressScreen';
 import AboutScreen from './src/screens/AboutScreen';
+import ChatBotScreen from './src/screens/ChatBotScreen';
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -39,8 +40,9 @@ function CustomTabBar({ state, descriptors, navigation }) {
   const tabDetails = {
     HomeTab: { iconName: 'home', label: 'Home' },
     MenuTab: { iconName: 'restaurant', label: 'Menu' },
-    OrdersTab: { iconName: 'receipt', label: 'Orders' },
     CartTab: { iconName: 'cart', label: 'Cart' },
+    OrdersTab: { iconName: 'receipt', label: 'Orders' },
+    BookTableTab: { iconName: 'calendar', label: 'Book Table' },
     ProfileTab: { iconName: 'person', label: 'Profile' },
   };
 
@@ -73,7 +75,7 @@ function CustomTabBar({ state, descriptors, navigation }) {
           >
             {isFocused ? (
               <View style={tabStyles.activePill}>
-                <Ionicons name={info.iconName} size={18} color="#FF3D00" />
+                <Ionicons name={info.iconName} size={18} color="#9C91FA" />
                 <Text style={tabStyles.activeLabel}>{info.label}</Text>
                 {badge > 0 && (
                   <View style={tabStyles.activeBadge}>
@@ -83,7 +85,7 @@ function CustomTabBar({ state, descriptors, navigation }) {
               </View>
             ) : (
               <View style={tabStyles.inactiveIconBox}>
-                <Ionicons name={`${info.iconName}-outline`} size={22} color="#FFFFFF" />
+                <Ionicons name={`${info.iconName}-outline`} size={22} color="#A0A0A0" />
                 {badge > 0 && (
                   <View style={tabStyles.inactiveBadge}>
                     <Text style={tabStyles.inactiveBadgeText}>{badge > 99 ? '99+' : badge}</Text>
@@ -107,8 +109,9 @@ function MainTabs() {
     >
       <Tab.Screen name="HomeTab" component={HomeScreen} />
       <Tab.Screen name="MenuTab" component={MenuScreen} />
-      <Tab.Screen name="OrdersTab" component={OrderHistoryScreen} />
       <Tab.Screen name="CartTab" component={CartScreen} />
+      <Tab.Screen name="OrdersTab" component={OrderHistoryScreen} />
+      <Tab.Screen name="BookTableTab" component={TableBookingScreen} />
       <Tab.Screen name="ProfileTab" component={ProfileScreen} />
     </Tab.Navigator>
   );
@@ -144,6 +147,7 @@ function AppStack() {
       <Stack.Screen name="Feedback" component={FeedbackScreen} />
       <Stack.Screen name="Address" component={AddressScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="ChatBot" component={ChatBotScreen} options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
     </Stack.Navigator>
   );
 }
@@ -156,7 +160,7 @@ function RootNavigator() {
     return (
       <View style={styles.loadingContainer}>
         <Text style={styles.loadingEmoji}>☕</Text>
-        <ActivityIndicator size="large" color="#FF3D00" />
+        <ActivityIndicator size="large" color="#E23744" />
         <Text style={styles.loadingText}>Loading Sip & Bite...</Text>
       </View>
     );
@@ -184,21 +188,21 @@ export default function App() {
 const tabStyles = StyleSheet.create({
   tabBarContainer: {
     position: 'absolute',
-    bottom: 18,
-    left: 12,
-    right: 12,
-    backgroundColor: '#FF3D00',
-    borderRadius: 34,
-    height: 62,
+    bottom: 24,
+    left: 16,
+    right: 16,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 30,
+    height: 64,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingHorizontal: 6,
-    elevation: 16,
-    shadowColor: '#FF3D00',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.35,
-    shadowRadius: 14,
+    paddingHorizontal: 10,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.1,
+    shadowRadius: 20,
   },
   tabItem: {
     alignItems: 'center',
@@ -208,29 +212,21 @@ const tabStyles = StyleSheet.create({
   activePill: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    paddingHorizontal: 14,
+    backgroundColor: '#F3F4FB',
+    paddingHorizontal: 12,
     paddingVertical: 8,
-    borderRadius: 22,
-    gap: 6,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-  },
-  activeEmoji: {
-    fontSize: 16,
+    borderRadius: 20,
+    gap: 4,
   },
   activeLabel: {
-    color: '#FF3D00',
-    fontSize: 13,
-    fontWeight: '900',
+    color: '#9C91FA',
+    fontSize: 12,
+    fontWeight: '800',
   },
   activeBadge: {
-    backgroundColor: '#FF3D00',
+    backgroundColor: '#FA73A0',
     borderRadius: 8,
-    paddingHorizontal: 5,
+    paddingHorizontal: 4,
     paddingVertical: 1,
     marginLeft: 2,
   },
@@ -245,12 +241,8 @@ const tabStyles = StyleSheet.create({
     justifyContent: 'center',
     position: 'relative',
   },
-  inactiveEmoji: {
-    fontSize: 20,
-    opacity: 0.9,
-  },
   inactiveBadge: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FA73A0',
     borderRadius: 8,
     paddingHorizontal: 4,
     paddingVertical: 1,
@@ -259,7 +251,7 @@ const tabStyles = StyleSheet.create({
     right: 2,
   },
   inactiveBadgeText: {
-    color: '#FF3D00',
+    color: '#FFFFFF',
     fontSize: 9,
     fontWeight: '900',
   },

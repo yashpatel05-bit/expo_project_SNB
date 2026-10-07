@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     marginBottom: 12,
     padding: 16,
-    shadowColor: '#FF3D00',
+    shadowColor: '#E23744',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.08,
     shadowRadius: 6,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   total: {
-    color: '#FF3D00',
+    color: '#E23744',
     fontSize: 17,
     fontWeight: '900',
   },

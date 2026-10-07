@@ -31,7 +31,7 @@ export default function CartItemRow({
           onPress={() => handleDecrease(target)}
           accessibilityLabel="Decrease quantity"
         >
-          <Ionicons name="remove" size={14} color="#FF3D00" />
+          <Ionicons name="remove" size={14} color="#E23744" />
         </Pressable>
 
         <Text style={styles.quantity}>{quantity}</Text>
@@ -41,7 +41,7 @@ export default function CartItemRow({
           onPress={() => handleIncrease(target)}
           accessibilityLabel="Increase quantity"
         >
-          <Ionicons name="add" size={14} color="#FF3D00" />
+          <Ionicons name="add" size={14} color="#E23744" />
         </Pressable>
       </View>
 
@@ -52,7 +52,7 @@ export default function CartItemRow({
         onPress={() => onDelete && onDelete(target)}
         accessibilityLabel={`Remove ${menuItem.name}`}
       >
-        <Ionicons name="trash-outline" size={16} color="#FF3D00" />
+        <Ionicons name="trash-outline" size={16} color="#E23744" />
       </Pressable>
     </View>
   );
