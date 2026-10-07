@@ -9,9 +9,15 @@ export const DISTANCE_MATRIX_API_KEY = '1padf1Q3jnteeyaMMFa8kLDnzqxd815ay0VD9VP6
 // Update this if your WiFi IP changes.
 // Make sure to start Laravel with: php artisan serve --host=0.0.0.0
 // ──────────────────────────────────────────────────────────────
+import { Platform } from 'react-native';
+
 const SERVER_IP = '10.206.5.191';
 
-export const API_BASE_URL = `http://${SERVER_IP}:8000/api/`;
+// If running in Android Emulator, use the special alias 10.0.2.2 which bypasses Windows Firewall completely
+const isEmulator = !Constants.isDevice;
+export const API_BASE_URL = (Platform.OS === 'android' && isEmulator)
+  ? 'http://10.0.2.2:8000/api/'
+  : `http://${SERVER_IP}:8000/api/`;
 
 console.log(`[AppConfig] Connected API Base URL: ${API_BASE_URL}`);
 
